@@ -3,6 +3,11 @@ require 'test_helper'
 class DishesControllerTest < ActionController::TestCase
   setup do
     @dish = dishes(:one)
+    @update = {
+      item: 'Lorem Ipsum',
+      spicy: true,
+      gf: false
+    }
   end
 
   test "should get index" do
@@ -18,7 +23,7 @@ class DishesControllerTest < ActionController::TestCase
 
   test "should create dish" do
     assert_difference('Dish.count') do
-      post :create, dish: { gf: @dish.gf, item: @dish.item, spicy: @dish.spicy }
+      post :create, dish: @update
     end
 
     assert_redirected_to dish_path(assigns(:dish))
@@ -35,7 +40,7 @@ class DishesControllerTest < ActionController::TestCase
   end
 
   test "should update dish" do
-    patch :update, id: @dish, dish: { gf: @dish.gf, item: @dish.item, spicy: @dish.spicy }
+    patch :update, id: @dish, dish: @update
     assert_redirected_to dish_path(assigns(:dish))
   end
 
