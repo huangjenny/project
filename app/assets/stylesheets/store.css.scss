@@ -1,0 +1,44 @@
+// Place all the styles related to the Store controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.store {
+    h1 {
+	margin: 0;
+	padding-bottom: 0.5em;
+	font: 175% "Georgia", serif;
+	color: #0D0097;
+	border-bottom: 3px dotted #000000;
+    }
+
+    /* Entry */
+    .entry {
+	overflow: auto;
+	height: 3em;
+
+	h3 {
+	    font-size: 120%;
+	    font-family: "Georgia", serif;
+	    margin-left: 5px;
+	    color: #0D0097;
+	    
+	}
+	img {
+	    width: 20px;
+	    vertical-align: bottom;
+	}
+    }
+
+    /* Legend */
+    .legend {
+	font-family: "Georgia", serif;
+	font-size: 90%;
+	
+	img{
+	    width: 20px;
+	    margin-left: 3px;
+	    vertical-align: middle;
+	}
+	
+    }
+}

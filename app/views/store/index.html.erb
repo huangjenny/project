@@ -1,0 +1,24 @@
+<% if notice %>
+<p id="notice"><%= notice %> </p>
+<% end %>
+
+<h1>Today's Menu</h1>
+
+<% @dishes.each do |dish| %>
+<div class="entry">
+  <h3><%= dish.item %>
+  
+  <% if dish.spicy then %>
+  <%= image_tag("spicy.png") %>
+  <% end %>
+
+   <% if dish.gf then %>
+  <%= image_tag("gf.png") %>
+  <% end %>
+  </h3>
+</div>
+<% end %>
+
+<div class="legend">
+<%= image_tag("spicy.png") %> = spicy <%= image_tag("gf.png") %> = gluten-free
+</div>
