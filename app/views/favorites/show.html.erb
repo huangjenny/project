@@ -1,0 +1,17 @@
+<% if notice %>
+<p id="notice"><%=notice%></p>
+<% end %>
+
+<div class="links">
+  <%= link_to "Menu", controller: "store" %>
+  <%= link_to "Your Favorites", controller: "favorites", action: "show", id: @favorite.id %>
+</div>
+
+<h2>Your Favorites</h2>
+
+<ul>
+  <% @favorite.line_items.each do |favorite| %>
+  <li><%= favorite.dish.item %></li>
+  <% end %>
+  </ul>
+

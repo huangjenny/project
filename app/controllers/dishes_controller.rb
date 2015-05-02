@@ -1,4 +1,6 @@
 class DishesController < ApplicationController
+  include CurrentFavorite
+  
   before_action :set_dish, only: [:show, :edit, :update, :destroy]
 
   # GET /dishes
@@ -10,6 +12,8 @@ class DishesController < ApplicationController
   # GET /dishes/1
   # GET /dishes/1.json
   def show
+    @dish = Dish.find(params[:id])
+    <b>@comment = Comment.new(:post => @post)</b>
   end
 
   # GET /dishes/new

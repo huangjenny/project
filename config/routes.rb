@@ -1,4 +1,10 @@
 Project::Application.routes.draw do
+  resources :comments
+
+  resources :line_items
+
+  resources :favorites
+
   get "store/index"
   resources :dishes
 

@@ -1,6 +1,7 @@
 <h1>Dishes</h1>
 
 <table>
+  
   <% @dishes.each do |dish| %>
   <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
     <td class="list_description">
@@ -14,7 +15,9 @@
     <td class="list_actions">
       <%= link_to 'Show', dish %></br>
       <%= link_to 'Edit', edit_dish_path(dish) %></br>
-       <%= link_to 'Destroy', dish, method: :delete, data: { confirm: 'Are you sure?' } %></br>
+       <%= link_to 'Destroy', dish, method: :delete, data: { confirm:
+	   'Are you sure?' } %></br>
+       
     </td>
   </tr>
   

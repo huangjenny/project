@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150408133323) do
+ActiveRecord::Schema.define(version: 20150429142350) do
+
+  create_table "comments", force: true do |t|
+    t.string   "name"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "dishes", force: true do |t|
     t.string   "item"
@@ -20,5 +27,20 @@ ActiveRecord::Schema.define(version: 20150408133323) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "favorites", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "line_items", force: true do |t|
+    t.integer  "dish_id"
+    t.integer  "favorite_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "line_items", ["dish_id"], name: "index_line_items_on_dish_id"
+  add_index "line_items", ["favorite_id"], name: "index_line_items_on_favorite_id"
 
 end

@@ -1,0 +1,13 @@
+// Place all the styles related to the Favorites controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.favorite {
+    h2 {
+	margin: 0;
+	padding-bottom: 0.5em;
+	font: 175% "Georgia", serif;
+	color: #0D0097;
+	border-bottom: 3px dotted #000000;
+    }
+}

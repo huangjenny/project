@@ -2,6 +2,11 @@
 <p id="notice"><%= notice %> </p>
 <% end %>
 
+<div class="links">
+  <%= link_to "Menu", controller: "store" %>
+  <%= link_to "Your Favorites", controller: "favorites", action: "show", id: @favorite.id %>
+</div>
+
 <h1>Today's Menu</h1>
 
 <% @dishes.each do |dish| %>
@@ -15,6 +20,9 @@
    <% if dish.gf then %>
   <%= image_tag("gf.png") %>
   <% end %>
+  
+ <%= button_to 'Favorite', line_items_path(dish_id: dish) %>
+  
   </h3>
 </div>
 <% end %>
@@ -22,3 +30,4 @@
 <div class="legend">
 <%= image_tag("spicy.png") %> = spicy <%= image_tag("gf.png") %> = gluten-free
 </div>
+
