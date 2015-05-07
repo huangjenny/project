@@ -13,7 +13,7 @@ class DishesController < ApplicationController
   # GET /dishes/1.json
   def show
     @dish = Dish.find(params[:id])
-    <b>@comment = Comment.new(:post => @post)</b>
+    
   end
 
   # GET /dishes/new
@@ -27,6 +27,7 @@ class DishesController < ApplicationController
 
   # POST /dishes
   # POST /dishes.json
+  
   def create
     @dish = Dish.new(dish_params)
 
@@ -73,6 +74,6 @@ class DishesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dish_params
-      params.require(:dish).permit(:item, :spicy, :gf)
+      params.require(:dish).permit(:item, :spicy, :gf, :newdate)
     end
 end

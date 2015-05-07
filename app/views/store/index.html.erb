@@ -2,32 +2,74 @@
 <p id="notice"><%= notice %> </p>
 <% end %>
 
+<h1><center>Menu</center></h1>
+
 <div class="links">
+  <center>
   <%= link_to "Menu", controller: "store" %>
-  <%= link_to "Your Favorites", controller: "favorites", action: "show", id: @favorite.id %>
+  <%= link_to "Your Favorites", controller: "favorites", action:
+      "show", id: @favorite.id %>
+  </center>
 </div>
 
-<h1>Today's Menu</h1>
-
-<% @dishes.each do |dish| %>
-<div class="entry">
-  <h3><%= dish.item %>
+<div class="columns">
+  <h2>Yesterday</h2>
   
-  <% if dish.spicy then %>
-  <%= image_tag("spicy.png") %>
-  <% end %>
-
-   <% if dish.gf then %>
-  <%= image_tag("gf.png") %>
-  <% end %>
-  
- <%= button_to 'Favorite', line_items_path(dish_id: dish) %>
-  
-  </h3>
-</div>
-<% end %>
-
-<div class="legend">
-<%= image_tag("spicy.png") %> = spicy <%= image_tag("gf.png") %> = gluten-free
+  <% @yesterday.each do |dish| %>
+    <h3><%= dish.item %>
+    
+    <% if dish.spicy then %>
+    <%= image_tag("spicy.png") %>
+    <% end %>
+    
+       <% if dish.gf then %>
+       <%= image_tag("gf.png") %>
+       <% end %>
+       
+       <%= button_to 'Favorite', line_items_path(dish_id: dish) %>
+    </h3>
+    <% end %>
 </div>
 
+<div class="columns">
+  <h2>Today</h2>
+  
+  <% @today.each do |dish| %>
+    <h3><%= dish.item %>
+    
+    <% if dish.spicy then %>
+    <%= image_tag("spicy.png") %>
+    <% end %>
+    
+    <% if dish.gf then %>
+    <%= image_tag("gf.png") %>
+    <% end %>
+       
+    <%= button_to 'Favorite', line_items_path(dish_id: dish) %>
+    </h3>
+    <% end %>
+</div>
+
+<div class="columns">
+  <h2>Tomorrow</h2>
+  
+  <% @tomorrow.each do |dish| %>
+    <h3><%= dish.item %>
+    
+    <% if dish.spicy then %>
+    <%= image_tag("spicy.png") %>
+    <% end %>
+    
+    <% if dish.gf then %>
+    <%= image_tag("gf.png") %>
+    <% end %>
+       
+    <%= button_to 'Favorite', line_items_path(dish_id: dish) %>
+    </h3>
+    <% end %>
+</div>
+
+
+<div class="legend"></h4>
+  <center><%= image_tag("spicy.png") %> = spicy <%= image_tag("gf.png") %> = gluten-free </h4></center>
+</div>
